@@ -25,6 +25,10 @@ const config: Config = {
         content: "72rem",
         wide: "78rem",
       },
+      container: {
+        center: true,
+        padding: { DEFAULT: "1.5rem", md: "2.5rem" },
+      },
     },
   },
   plugins: [],
