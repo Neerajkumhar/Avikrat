@@ -4,6 +4,7 @@ import { ArchitectureSection } from "@/components/sections/home/ArchitectureSect
 import { ScalingSection } from "@/components/sections/home/ScalingSection";
 import { ApplicationsSection } from "@/components/sections/home/ApplicationsSection";
 import { ProofSection } from "@/components/sections/home/ProofSection";
+import { PartnerSection } from "@/components/sections/home/PartnerSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <ScalingSection />
       <ApplicationsSection />
       <ProofSection />
+      <PartnerSection />
     </main>
   );
 }
