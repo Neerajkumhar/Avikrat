@@ -13,6 +13,7 @@ const config: Config = {
         soft: "var(--text-secondary)",
         faint: "var(--text-muted)",
         cyan: "var(--accent-cyan)",
+        cyanBright: "var(--accent-cyan-bright)",
         electric: "var(--accent-blue)",
       },
       fontFamily: {

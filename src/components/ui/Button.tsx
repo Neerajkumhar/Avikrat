@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 const styles = {
   primary:
-    "bg-cyan text-[#04121a] hover:bg-[#2de3d4] focus-visible:bg-[#2de3d4]",
+    "bg-cyan text-[#04121a] hover:bg-cyanBright focus-visible:bg-cyanBright",
   ghost:
     "border border-line text-ink hover:border-cyan/60 hover:text-cyan",
 } as const;
