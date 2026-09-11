@@ -16,7 +16,7 @@ const STAGES = [
 
 export function TechHero() {
   return (
-    <section aria-labelledby="tech-hero-title" className="relative pt-32 md:pt-40">
+    <section aria-labelledby="tech-hero-title" className="relative pt-24 md:pt-32">
       <motion.div
         variants={stagger}
         initial="hidden"

@@ -9,7 +9,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`rounded-sm border border-line bg-surface p-6 md:p-8 ${
+      className={`instrument-panel border border-line bg-surface p-6 md:p-8 ${
         interactive
           ? "transition-all duration-200 hover:border-charcoal hover:bg-surface2"
           : ""

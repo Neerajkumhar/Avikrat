@@ -6,7 +6,7 @@ import { HOME_IMAGES } from "@/lib/images";
 
 export function ScalingSection() {
   return (
-    <section aria-labelledby="scaling-title" className="container-content py-24 md:py-32 scroll-mt-20">
+    <section aria-labelledby="scaling-title" className="container-content flex min-h-[100svh] flex-col justify-center py-24 md:py-32 scroll-mt-20">
       <div className="grid items-center gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
         <div className="order-2 lg:order-1">
           <AvikratImage

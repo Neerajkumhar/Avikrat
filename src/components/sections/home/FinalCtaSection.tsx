@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 
 export function FinalCtaSection() {
   return (
-    <section aria-labelledby="cta-title" className="container-content py-28 md:py-40">
+    <section aria-labelledby="cta-title" className="container-content flex min-h-[100svh] flex-col justify-center py-28 md:py-40">
       <motion.div
         variants={stagger}
         initial="hidden"

@@ -26,7 +26,7 @@ const CHECKS = [
 
 export function ProofSection() {
   return (
-    <section aria-labelledby="proof-title" className="container-content py-24 md:py-32 scroll-mt-20">
+    <section aria-labelledby="proof-title" className="container-content flex min-h-[100svh] flex-col justify-center py-24 md:py-32 scroll-mt-20">
       <div className="grid items-start gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
         <div className="lg:sticky lg:top-28">
           <SectionHeader
@@ -48,7 +48,7 @@ export function ProofSection() {
           initial="hidden"
           whileInView="show"
           viewport={viewport}
-          className="rounded-sm border border-line bg-surface p-6 md:p-8"
+          className="instrument-panel border border-line bg-surface p-6 md:p-8"
         >
           <p className="eyebrow">Active Simulator Benchmarks</p>
           <ul className="mt-6 divide-y divide-line">

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -17,17 +17,25 @@
   --accent: 20 20 19;
   --accent-2: 60 60 58;
   --accent-soft: 40 40 38;
+
+  --dur-fast: 140ms;
+  --dur: 240ms;
+  --dur-slow: 560ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
   body {
+    overflow-x: clip;
     background-color: rgb(var(--bg-base));
     color: rgb(var(--text-primary));
     font-family: var(--font-archivo);
@@ -59,7 +67,33 @@
   }
 
   .eyebrow {
-    @apply font-mono text-[0.7rem] font-medium uppercase tracking-eyebrow text-faint;
+    @apply font-mono text-[0.7rem] uppercase tracking-eyebrow text-faint;
+  }
+
+  .instrument-panel {
+    position: relative;
+  }
+
+  /* corner registration ticks — the signature instrument detail */
+  .instrument-panel::before,
+  .instrument-panel::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    pointer-events: none;
+  }
+  .instrument-panel::before {
+    top: 7px;
+    left: 7px;
+    border-top: 1.5px solid rgb(var(--accent) / 0.55);
+    border-left: 1.5px solid rgb(var(--accent) / 0.55);
+  }
+  .instrument-panel::after {
+    top: 7px;
+    right: 7px;
+    border-top: 1.5px solid rgb(var(--accent) / 0.55);
+    border-right: 1.5px solid rgb(var(--accent) / 0.55);
   }
 
   .tech-label {
@@ -90,6 +124,17 @@
 
   .card-architectural {
     @apply rounded-sm border border-line bg-surface p-6 md:p-8 transition-colors duration-200;
+  }
+}
+
+main > section {
+    scroll-snap-align: start;
+    min-height: 100svh;
+  }
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-snap-type: y mandatory;
   }
 }
 

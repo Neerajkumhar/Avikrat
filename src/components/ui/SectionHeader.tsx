@@ -30,7 +30,7 @@ export function SectionHeader({
       <Eyebrow>{eyebrow}</Eyebrow>
       <h2
         id={id}
-        className="mt-4 text-[clamp(2.25rem,4.5vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-charcoal uppercase"
+        className="mt-4 text-[clamp(1.75rem,6.5vw,3.25rem)] font-bold leading-[1.07] tracking-tight text-charcoal uppercase [text-wrap:balance]"
         style={{ fontFamily: "var(--font-archivo), sans-serif" }}
       >
         {title}

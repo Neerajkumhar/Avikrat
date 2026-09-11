@@ -3,11 +3,11 @@ import type { ReactNode } from "react";
 
 const styles = {
   primary:
-    "bg-charcoal text-base hover:bg-black border border-charcoal uppercase tracking-[0.14em] text-[0.8125rem]",
+    "bg-charcoal text-base hover:bg-black active:bg-black active:translate-y-px border border-charcoal uppercase tracking-[0.14em] text-[0.8125rem]",
   ghost:
-    "border border-line bg-transparent text-charcoal hover:border-charcoal hover:bg-surface2 uppercase tracking-[0.14em] text-[0.8125rem]",
+    "border border-line bg-transparent text-charcoal hover:border-charcoal hover:bg-surface2 active:bg-surface2 active:translate-y-px uppercase tracking-[0.14em] text-[0.8125rem]",
   outline:
-    "border border-line bg-surface text-ink hover:border-charcoal hover:text-charcoal uppercase tracking-[0.14em] text-[0.8125rem]",
+    "border border-line bg-surface text-ink hover:border-charcoal hover:text-charcoal active:text-charcoal active:translate-y-px uppercase tracking-[0.14em] text-[0.8125rem]",
 } as const;
 
 export function Button({

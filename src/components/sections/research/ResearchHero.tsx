@@ -7,7 +7,7 @@ import { RESEARCH_IMAGES } from "@/lib/images";
 
 export function ResearchHero() {
   return (
-    <section aria-labelledby="research-hero-title" className="relative pt-32 md:pt-40">
+    <section aria-labelledby="research-hero-title" className="relative pt-24 md:pt-32">
       <motion.div
         variants={stagger}
         initial="hidden"

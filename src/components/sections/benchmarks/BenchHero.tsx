@@ -8,7 +8,7 @@ import { BENCH_IMAGES } from "@/lib/images";
 
 export function BenchHero() {
   return (
-    <section aria-labelledby="bench-hero-title" className="relative pt-32 md:pt-40">
+    <section aria-labelledby="bench-hero-title" className="relative pt-24 md:pt-32">
       <motion.div
         variants={stagger}
         initial="hidden"

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/pageMeta";
-import { PlaceholderPage } from "@/components/ui/PlaceholderPage";
+import { ContactHero } from "@/components/sections/contact/ContactHero";
+import { ContactSection } from "@/components/sections/contact/ContactSection";
 
 export const metadata: Metadata = pageMeta(
   "Contact AVIKRAT",
@@ -8,5 +9,10 @@ export const metadata: Metadata = pageMeta(
 );
 
 export default function ContactPage() {
-  return <PlaceholderPage title="Contact AVIKRAT" />;
+  return (
+    <main id="main">
+      <ContactHero />
+      <ContactSection />
+    </main>
+  );
 }

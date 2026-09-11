@@ -7,7 +7,7 @@ import { APPS_IMAGES } from "@/lib/images";
 
 export function AppsHero() {
   return (
-    <section aria-labelledby="apps-hero-title" className="relative pt-32 md:pt-40">
+    <section aria-labelledby="apps-hero-title" className="relative pt-24 md:pt-32">
       <motion.div
         variants={stagger}
         initial="hidden"
@@ -21,7 +21,7 @@ export function AppsHero() {
         <motion.h1
           id="apps-hero-title"
           variants={fadeUp}
-          className="mt-6 text-[clamp(2.5rem,5.5vw,4.25rem)] font-bold leading-[1.04] tracking-tight text-charcoal uppercase"
+          className="mt-6 text-[clamp(2rem,6.5vw,4.25rem)] font-bold leading-[1.04] tracking-tight text-charcoal uppercase [text-wrap:balance]"
           style={{ fontFamily: "var(--font-archivo)" }}
         >
           Where persistent context becomes{' '}

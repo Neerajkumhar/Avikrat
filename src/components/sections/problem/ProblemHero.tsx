@@ -8,7 +8,7 @@ import { PROBLEM_IMAGES } from "@/lib/images";
 
 export function ProblemHero() {
   return (
-    <section aria-labelledby="problem-hero-title" className="relative pt-32 md:pt-40">
+    <section aria-labelledby="problem-hero-title" className="relative pt-24 md:pt-32">
       <div className="container-content grid items-start gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
         <motion.div
           variants={stagger}

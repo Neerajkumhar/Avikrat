@@ -21,7 +21,7 @@ export function AboutCtaSection() {
         <motion.h2
           id="about-cta-title"
           variants={fadeUp}
-          className="mx-auto max-w-3xl text-[clamp(2.25rem,4.5vw,3.5rem)] font-bold leading-[1.08] tracking-tight text-charcoal uppercase"
+          className="mx-auto max-w-3xl text-[clamp(1.75rem,6.5vw,3.5rem)] font-bold leading-[1.08] tracking-tight text-charcoal uppercase [text-wrap:balance]"
           style={{ fontFamily: "var(--font-archivo)" }}
         >
           Let's build the next generation

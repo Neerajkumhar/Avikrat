@@ -13,7 +13,7 @@ const PRINCIPLES = [
 
 export function AboutHero() {
   return (
-    <section aria-labelledby="about-hero-title" className="relative pt-32 md:pt-40">
+    <section aria-labelledby="about-hero-title" className="relative pt-24 md:pt-32">
       <motion.div
         variants={stagger}
         initial="hidden"

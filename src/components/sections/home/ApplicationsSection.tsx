@@ -32,7 +32,7 @@ const APPS = [
 
 export function ApplicationsSection() {
   return (
-    <section aria-labelledby="apps-title" className="container-content py-24 md:py-32 scroll-mt-20">
+    <section aria-labelledby="apps-title" className="container-content flex min-h-[100svh] flex-col justify-center py-24 md:py-32 scroll-mt-20">
       <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
         <SectionHeader
           id="apps-title"
