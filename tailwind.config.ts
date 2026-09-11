@@ -12,15 +12,21 @@ const config: Config = {
         ink: "rgb(var(--text-primary) / <alpha-value>)",
         soft: "rgb(var(--text-secondary) / <alpha-value>)",
         faint: "rgb(var(--text-muted) / <alpha-value>)",
-        cyan: "rgb(var(--accent-cyan) / <alpha-value>)",
-        cyanBright: "rgb(var(--accent-cyan-bright) / <alpha-value>)",
-        electric: "rgb(var(--accent-blue) / <alpha-value>)",
+        cyan: "rgb(var(--accent) / <alpha-value>)",
+        cyanBright: "rgb(var(--accent-soft) / <alpha-value>)",
+        electric: "rgb(var(--accent-2) / <alpha-value>)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
+        sans: ["var(--font-archivo)", "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: [
+          "var(--font-plex-mono)",
+          "ui-monospace",
+          "SFMono-Regular",
+          "monospace",
+        ],
       },
       letterSpacing: {
-        eyebrow: "0.14em",
+        eyebrow: "0.18em",
       },
       maxWidth: {
         content: "72rem",

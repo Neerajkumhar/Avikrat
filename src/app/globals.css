@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --bg-base: 6 8 15;
-  --bg-surface: 11 15 26;
-  --bg-surface-2: 16 21 36;
-  --border: 28 34 51;
-  --text-primary: 232 234 240;
-  --text-secondary: 155 163 181;
-  --text-muted: 130 140 160;
-  --accent-cyan: 34 211 197;
-  --accent-cyan-bright: 45 227 212;
-  --accent-blue: 59 130 246;
+  --bg-base: 246 245 242;
+  --bg-surface: 251 250 248;
+  --bg-surface-2: 239 238 234;
+  --border: 226 224 218;
+  --text-primary: 38 38 36;
+  --text-secondary: 90 88 83;
+  --text-muted: 108 106 100;
+  --accent: 30 30 28;
+  --accent-2: 74 72 68;
+  --accent-soft: 58 56 52;
 }
 
 @layer base {
@@ -29,12 +29,12 @@
   }
 
   ::selection {
-    background: rgba(34, 211, 197, 0.25);
+    background: rgb(var(--accent) / 0.25);
     color: rgb(var(--text-primary));
   }
 
   :focus-visible {
-    outline: 2px solid rgb(var(--accent-cyan));
+    outline: 2px solid rgb(var(--accent));
     outline-offset: 2px;
     border-radius: 2px;
   }
@@ -46,7 +46,7 @@
   }
 
   .eyebrow {
-    @apply text-[0.75rem] font-medium uppercase tracking-eyebrow text-faint;
+    @apply font-mono text-[0.75rem] font-medium uppercase tracking-eyebrow text-faint;
   }
 
   .tech-label {
