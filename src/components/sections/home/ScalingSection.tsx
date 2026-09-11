@@ -12,7 +12,7 @@ export function ScalingSection() {
           <AvikratImage
             def={HOME_IMAGES.scaling}
             mode="aspect"
-            aspectRatio="3 / 4"
+            aspectRatio="16 / 9"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>

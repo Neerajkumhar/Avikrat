@@ -28,7 +28,7 @@ export function ProblemSection() {
         <AvikratImage
           def={PROBLEM_IMAGES.hero}
           mode="aspect"
-          aspectRatio="4 / 3"
+          aspectRatio="16 / 9"
           sizes="(max-width: 768px) 100vw, 50vw"
           parallax={16}
         />

@@ -15,9 +15,9 @@ export const HOME_IMAGES = {
     priority: true,
   },
   problem: {
-    src: `${imagesDir}/avikrat-long-context.webp`,
-    alt: "A growing, expanding stream of information becoming increasingly dense and heavy inside an advanced computing environment.",
-    aspect: "4 / 3",
+    src: `${imagesDir}/Problem.jpg`,
+    alt: "Standard decoding scales with every token.",
+    aspect: "16 / 9",
   },
   architecture: {
     src: `${imagesDir}/avikrat-compression.webp`,
@@ -25,16 +25,16 @@ export const HOME_IMAGES = {
     aspect: "4 / 3",
   },
   scaling: {
-    src: `${imagesDir}/avikrat-state.webp`,
-    alt: "A small, stable, luminous computational state at rest inside a dark computational environment.",
-    aspect: "3 / 4",
+    src: `${imagesDir}/Scaling.jpg`,
+    alt: "Designed for flatter scaling.",
+    aspect: "16 / 9",
   },
 } satisfies Record<string, AvikratImageDef>;
 
 export const PROBLEM_IMAGES = {
   hero: {
-    src: `${imagesDir}/avikrat-long-context.webp`,
-    alt: "A huge expanding stream of information becoming increasingly dense and heavy inside an advanced computing environment.",
+    src: `${imagesDir}/Problem.jpg`,
+    alt: "Standard decoding scales with every token.",
     aspect: "16 / 9",
     priority: true,
   },
