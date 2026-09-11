@@ -23,18 +23,23 @@ export function SectionHeader({
       viewport={viewport}
       className={
         align === "center"
-          ? "mx-auto max-w-2xl text-center"
-          : "max-w-2xl"
+          ? "mx-auto max-w-3xl text-center"
+          : "max-w-3xl"
       }
     >
       <Eyebrow>{eyebrow}</Eyebrow>
       <h2
         id={id}
-        className="mt-4 text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.08] tracking-tight text-ink"
+        className="mt-4 text-[clamp(2.25rem,4.5vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-charcoal uppercase"
+        style={{ fontFamily: "var(--font-archivo), sans-serif" }}
       >
         {title}
       </h2>
-      {copy ? <p className="mt-5 text-base leading-relaxed text-soft">{copy}</p> : null}
+      {copy ? (
+        <p className="mt-5 text-base md:text-lg leading-relaxed text-soft font-normal">
+          {copy}
+        </p>
+      ) : null}
     </motion.div>
   );
 }

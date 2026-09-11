@@ -25,12 +25,12 @@ export function AppSectionShell({
         initial="hidden"
         whileInView="show"
         viewport={viewport}
-        className="flex items-center gap-3"
+        className="flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-widest text-faint"
       >
-        <span className="text-xs font-semibold uppercase tracking-[0.22em] text-faint">{label}</span>
-        <span aria-hidden="true" className="h-px w-10 bg-cyan/60" />
+        <span>{label}</span>
+        <span aria-hidden="true" className="h-px w-12 bg-line" />
       </motion.div>
-      <div className="mt-12 grid items-start gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+      <div className="mt-10 grid items-start gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
         <div className="lg:sticky lg:top-28">
           <motion.h2
             id={id}
@@ -38,7 +38,8 @@ export function AppSectionShell({
             initial="hidden"
             whileInView="show"
             viewport={viewport}
-            className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.08] tracking-tight text-ink"
+            className="text-[clamp(2.25rem,4.5vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-charcoal uppercase"
+            style={{ fontFamily: "var(--font-archivo)" }}
           >
             {title}
           </motion.h2>
@@ -47,7 +48,7 @@ export function AppSectionShell({
             initial="hidden"
             whileInView="show"
             viewport={viewport}
-            className="mt-5 text-base leading-relaxed text-soft"
+            className="mt-5 text-base md:text-lg leading-relaxed text-soft font-normal"
           >
             {copy}
           </motion.p>
@@ -57,15 +58,18 @@ export function AppSectionShell({
               initial="hidden"
               whileInView="show"
               viewport={viewport}
-              className="mt-6 rounded-2xl border border-cyan/25 bg-cyan/5 p-5"
+              className="mt-8 rounded-sm border border-line bg-surface2 p-6"
             >
               <p className="text-sm leading-relaxed text-soft">
-                <span className="text-cyan">The opportunity.</span> {opportunity}
+                <span className="font-semibold text-charcoal uppercase tracking-wider font-mono text-xs block mb-1">
+                  THE OPPORTUNITY
+                </span>{" "}
+                {opportunity}
               </p>
             </motion.div>
           ) : null}
         </div>
-        <div className="rounded-2xl border border-line bg-surface p-5 md:p-7">{children}</div>
+        <div className="rounded-sm border border-line bg-surface p-6 md:p-8">{children}</div>
       </div>
     </section>
   );

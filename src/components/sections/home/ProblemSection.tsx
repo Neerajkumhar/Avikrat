@@ -11,19 +11,19 @@ export function ProblemSection() {
         <div className="lg:sticky lg:top-28">
           <SectionHeader
             id="problem-title"
-            eyebrow="The Problem"
+            eyebrow="01 · THE BOTTLENECK"
             title={
               <>
                 Standard decoding
                 <br />
-                scales with <span className="text-electric">every token.</span>
+                scales with <span className="text-soft font-normal">every token.</span>
               </>
             }
-            copy="As context grows, standard decoding keeps expanding the KV cache. Attention cost and memory traffic climb with it — driving up cost and slowing decoding on every turn."
+            copy="As context grows, standard decoding keeps expanding the KV cache. Attention cost and memory traffic climb linearly with context length — driving up compute cost and slowing latency on every turn."
           />
-          <p className="mt-6 text-xs text-faint">
-            Illustrative relationship — not measured benchmark data.
-          </p>
+          <div className="mt-8 border-t border-line pt-4 font-mono text-[0.75rem] text-faint uppercase tracking-wider">
+            ILLUSTRATIVE RELATIONSHIP · STANDARD TRANSFORMER DECODING
+          </div>
         </div>
         <AvikratImage
           def={PROBLEM_IMAGES.hero}

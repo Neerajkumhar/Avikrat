@@ -8,19 +8,19 @@ import { Button } from "@/components/ui/Button";
 const CHECKS = [
   {
     label: "True vs Predicted Context Slices",
-    copy: "Compares the simulated hidden state against the observed structure of the context.",
+    copy: "Compares simulated persistent state against observed attention context matrix structures.",
   },
   {
-    label: "Error Metrics",
-    copy: "Tracks how predicted state diverges from the reference across runs.",
+    label: "Error Metrics & Convergence",
+    copy: "Tracks state prediction deviation across high-depth token generation passes.",
   },
   {
-    label: "Cosine Similarity",
-    copy: "Measures structural alignment between prediction and reference.",
+    label: "Cosine Vector Similarity",
+    copy: "Measures directional alignment between compressed hidden vectors and full KV states.",
   },
   {
-    label: "Checkpoint Selection",
-    copy: "Determines which slices of context are worth persisting.",
+    label: "Checkpoint Selection Logic",
+    copy: "Determines optimal sequence slicing intervals for long-context persistence.",
   },
 ];
 
@@ -31,16 +31,15 @@ export function ProofSection() {
         <div className="lg:sticky lg:top-28">
           <SectionHeader
             id="proof-title"
-            eyebrow="Proof of Concept"
+            eyebrow="05 · EMPIRICAL VALIDATION"
             title="From simulator to infrastructure."
-            copy="A working simulator already predicts hidden-state structure and tracks validation behavior. It is the first step toward turning the architecture into production infrastructure."
+            copy="A working simulator models hidden-state structures and measures validation convergence. It serves as the architectural foundation for production-grade inference engine development."
           />
-          <p className="mt-5 max-w-md text-sm leading-relaxed text-soft">
-            These are the evaluation dimensions the current system exercises, being prepared
-            for larger-scale benchmarking.
+          <p className="mt-6 max-w-md font-mono text-[0.75rem] uppercase tracking-wider text-faint border-t border-line pt-4">
+            SIMULATION PIPELINE · RESEARCH EVALUATION DIMENSIONS
           </p>
           <div className="mt-8">
-            <Button href="/research">Explore the Research</Button>
+            <Button href="/research">Explore Research</Button>
           </div>
         </div>
 
@@ -49,9 +48,9 @@ export function ProofSection() {
           initial="hidden"
           whileInView="show"
           viewport={viewport}
-          className="rounded-2xl border border-line bg-surface p-6 md:p-8"
+          className="rounded-sm border border-line bg-surface p-6 md:p-8"
         >
-          <p className="eyebrow">Current validation</p>
+          <p className="eyebrow">Active Simulator Benchmarks</p>
           <ul className="mt-6 divide-y divide-line">
             {CHECKS.map((c) => (
               <motion.li
@@ -59,14 +58,17 @@ export function ProofSection() {
                 variants={fadeUp}
                 className="flex gap-4 py-5 first:pt-0 last:pb-0"
               >
-                <span aria-hidden="true" className="relative mt-1.5 h-2 w-2 shrink-0">
-                  <span className="absolute inset-0 rounded-full bg-cyan/30" />
-                  <span className="absolute inset-0 animate-ping rounded-full bg-cyan/40 [animation-duration:3s]" />
-                  <span className="absolute inset-[2px] rounded-full bg-cyan" />
+                <span aria-hidden="true" className="relative mt-2 h-2 w-2 shrink-0">
+                  <span className="absolute inset-0 rounded-full bg-charcoal" />
                 </span>
                 <div>
-                  <h3 className="text-[0.9375rem] font-medium text-ink">{c.label}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-soft">{c.copy}</p>
+                  <h3
+                    className="text-base font-bold text-charcoal uppercase tracking-tight"
+                    style={{ fontFamily: "var(--font-archivo)" }}
+                  >
+                    {c.label}
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-soft font-normal">{c.copy}</p>
                 </div>
               </motion.li>
             ))}

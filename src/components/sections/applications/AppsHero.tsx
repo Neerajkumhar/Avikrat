@@ -14,27 +14,26 @@ export function AppsHero() {
         animate="show"
         className="container-content max-w-4xl"
       >
-        <motion.div variants={fadeUp} className="flex items-center gap-3">
-          <span aria-hidden="true" className="h-px w-8 bg-cyan/70" />
-          <motion.p variants={fadeUp} className="eyebrow">
-            Applications
-          </motion.p>
-        </motion.div>
+        <motion.p variants={fadeUp} className="eyebrow flex items-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-charcoal" />
+          APPLICATIONS & PRODUCTION DOMAINS
+        </motion.p>
         <motion.h1
           id="apps-hero-title"
           variants={fadeUp}
-          className="mt-6 text-[clamp(2.5rem,5.5vw,4.25rem)] font-semibold leading-[1.04] tracking-tight text-ink"
+          className="mt-6 text-[clamp(2.5rem,5.5vw,4.25rem)] font-bold leading-[1.04] tracking-tight text-charcoal uppercase"
+          style={{ fontFamily: "var(--font-archivo)" }}
         >
           Where persistent context becomes{' '}
-          <span className="text-cyan">infrastructure.</span>
+          <span className="text-soft font-normal">infrastructure.</span>
         </motion.h1>
         <motion.p
           variants={fadeUp}
-          className="mt-6 max-w-2xl text-lg leading-relaxed text-soft"
+          className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-soft font-normal"
         >
-          Long-running AI systems increasingly need to remember more while remaining
-          responsive and efficient. AVIKRAT is exploring whether compact persistent state
-          can make continuous context more practical.
+          Long-running AI systems need to process massive context histories while remaining
+          responsive and cost-effective. AVIKRAT explores how compact persistent state
+          makes continuous long-context inference practical.
         </motion.p>
       </motion.div>
 

@@ -27,13 +27,13 @@ export function BenchMarkShell({
         initial="hidden"
         whileInView="show"
         viewport={viewport}
-        className="flex items-center gap-3"
+        className="flex items-center gap-3 font-mono text-[0.7rem] uppercase tracking-widest text-faint"
       >
-        <span className="font-mono text-xs font-medium uppercase tracking-[0.22em] text-cyan">{index}</span>
-        <span aria-hidden="true" className="h-px w-10 bg-cyan/60" />
-        <span className="text-xs font-semibold uppercase tracking-[0.22em] text-faint">{label}</span>
+        <span className="font-semibold text-charcoal">[{index}]</span>
+        <span aria-hidden="true" className="h-px w-10 bg-line" />
+        <span>{label}</span>
       </motion.div>
-      <div className="mt-12 grid items-start gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+      <div className="mt-10 grid items-start gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
         <div className="lg:sticky lg:top-28">
           <motion.h2
             id={`bench-${label}-title`}
@@ -41,7 +41,8 @@ export function BenchMarkShell({
             initial="hidden"
             whileInView="show"
             viewport={viewport}
-            className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.08] tracking-tight text-ink"
+            className="text-[clamp(2.25rem,4.5vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-charcoal uppercase"
+            style={{ fontFamily: "var(--font-archivo)" }}
           >
             {title}
           </motion.h2>
@@ -50,7 +51,7 @@ export function BenchMarkShell({
             initial="hidden"
             whileInView="show"
             viewport={viewport}
-            className="mt-4 text-base font-medium text-cyan"
+            className="mt-4 text-base font-mono text-xs uppercase tracking-wider font-semibold text-soft"
           >
             {sub}
           </motion.p>
@@ -59,14 +60,14 @@ export function BenchMarkShell({
             initial="hidden"
             whileInView="show"
             viewport={viewport}
-            className="mt-4 text-base leading-relaxed text-soft"
+            className="mt-4 text-base md:text-lg leading-relaxed text-soft font-normal"
           >
             {copy}
           </motion.p>
         </div>
-        <div className="rounded-2xl border border-line bg-surface p-5 md:p-7">
+        <div className="rounded-sm border border-line bg-surface p-6 md:p-8">
           {children}
-          {footer ? <div className="mt-5">{footer}</div> : null}
+          {footer ? <div className="mt-6 border-t border-line pt-4">{footer}</div> : null}
         </div>
       </div>
     </section>

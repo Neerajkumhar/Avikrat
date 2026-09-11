@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { nav } from "@/lib/site";
 
@@ -22,26 +21,32 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         scrolled || open
-          ? "border-b border-line bg-base"
+          ? "border-b border-line bg-base/95 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
       }`}
     >
-      <div className="container-content flex h-16 items-center justify-between md:h-20">
+      <div className="container-content flex h-[76px] items-center justify-between md:h-[80px]">
         <Link href="/" aria-label="AVIKRAT home" onClick={() => setOpen(false)}>
-          <Logo />
+          <span
+            className="font-bold uppercase tracking-[0.22em] text-charcoal text-2xl md:text-3xl"
+            style={{ fontFamily: "var(--font-archivo), sans-serif" }}
+          >
+            AVIKRAT
+          </span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-8 lg:gap-10 md:flex">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-soft transition-colors hover:text-ink"
+              className="text-[14px] uppercase tracking-[0.14em] font-medium text-soft transition-colors hover:text-charcoal"
+              style={{ fontFamily: "var(--font-archivo), sans-serif" }}
             >
               {item.label}
             </Link>
           ))}
-          <Button href="/contact" variant="ghost">
+          <Button href="/contact" variant="ghost" className="h-10 px-5 text-[13px]">
             Work With Us
           </Button>
         </nav>
@@ -51,7 +56,7 @@ export function Navbar() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 items-center justify-center rounded border border-line text-ink md:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-sm border border-line text-charcoal md:hidden"
         >
           <span className="relative block h-3.5 w-4">
             <span
@@ -89,7 +94,7 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="rounded px-3 py-3 text-sm text-soft hover:bg-surface hover:text-ink"
+                  className="rounded-sm px-3 py-3 text-[14px] uppercase tracking-[0.14em] text-soft hover:bg-surface hover:text-charcoal"
                 >
                   {item.label}
                 </Link>
@@ -97,7 +102,7 @@ export function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setOpen(false)}
-                className="mt-2 rounded bg-ink px-3 py-3 text-center text-sm font-medium text-base"
+                className="mt-2 rounded-sm bg-charcoal px-3 py-3 text-center text-[13px] uppercase tracking-[0.14em] font-medium text-base"
               >
                 Work With Us
               </Link>

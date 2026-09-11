@@ -19,13 +19,12 @@ export function ScalingSection() {
         <div className="order-1 lg:order-2">
           <SectionHeader
             id="scaling-title"
-            eyebrow="Scaling"
+            eyebrow="03 · PERFORMANCE MODEL"
             title="Designed for flatter scaling."
-            copy="Context grows. The cost baseline should stay. By reading history once into a compact persistent state, AVIKRAT aims to keep per-token compute and memory nearly constant as conversations get longer."
+            copy="Context expands continuously. The cost baseline should remain fixed. By reading history once into a compact persistent state, AVIKRAT aims to keep per-token compute and memory overhead flat across extended sequence lengths."
           />
-          <p className="mt-5 max-w-lg text-sm leading-relaxed text-soft">
-            This is a target of the architecture, not a published production benchmark.
-            The working simulator is where that target gets tested.
+          <p className="mt-6 max-w-lg font-mono text-[0.75rem] uppercase tracking-wider text-faint border-t border-line pt-4">
+            ARCHITECTURE OBJECTIVE · SIMULATOR VALIDATION MODEL
           </p>
         </div>
       </div>

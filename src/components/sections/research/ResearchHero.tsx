@@ -14,24 +14,25 @@ export function ResearchHero() {
         animate="show"
         className="container-content max-w-4xl"
       >
-        <motion.p variants={fadeUp} className="eyebrow">
-          RESEARCH / PROOF OF CONCEPT
+        <motion.p variants={fadeUp} className="eyebrow flex items-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-charcoal" />
+          RESEARCH & SIMULATOR PROOF-OF-CONCEPT
         </motion.p>
         <motion.h1
           id="research-hero-title"
           variants={fadeUp}
-          className="mt-6 text-[clamp(2.5rem,5.5vw,4.25rem)] font-semibold leading-[1.04] tracking-tight text-ink"
+          className="mt-6 text-[clamp(2.5rem,5.5vw,4.25rem)] font-bold leading-[1.04] tracking-tight text-charcoal uppercase"
+          style={{ fontFamily: "var(--font-archivo)" }}
         >
           A working simulator that{' '}
-          <span className="text-cyan">predicts hidden state.</span>
+          <span className="text-soft font-normal">predicts hidden state.</span>
         </motion.h1>
         <motion.p
           variants={fadeUp}
-          className="mt-6 max-w-2xl text-lg leading-relaxed text-soft"
+          className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-soft font-normal"
         >
-          AVIKRAT's Hidden State Simulator predicts the structure of compact persistent
-          hidden states and tracks validation behavior across the concepts below. These are
-          capabilities the simulator provides — not validated scores.
+          AVIKRAT's Hidden State Simulator models the structure of persistent
+          hidden states and evaluates validation convergence across key mathematical dimensions.
         </motion.p>
       </motion.div>
 

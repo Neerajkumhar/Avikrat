@@ -1,60 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg-base: 246 245 242;
-  --bg-surface: 251 250 248;
-  --bg-surface-2: 239 238 234;
-  --border: 226 224 218;
-  --text-primary: 38 38 36;
-  --text-secondary: 90 88 83;
-  --text-muted: 108 106 100;
-  --accent: 30 30 28;
-  --accent-2: 74 72 68;
-  --accent-soft: 58 56 52;
+  --font-archivo: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-plex-mono: 'IBM Plex Mono', SFMono-Regular, monospace;
+  --bg-base: 250 249 246;
+  --bg-surface: 244 244 241;
+  --bg-surface-2: 236 236 232;
+  --border: 226 224 222;
+  --text-primary: 44 44 43;
+  --text-secondary: 90 90 87;
+  --text-muted: 142 142 138;
+  --accent: 20 20 19;
+  --accent-2: 60 60 58;
+  --accent-soft: 40 40 38;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
   }
 
   body {
     background-color: rgb(var(--bg-base));
     color: rgb(var(--text-primary));
-    font-feature-settings: "cv11", "cv02";
+    font-family: var(--font-archivo);
+    font-feature-settings: "cv11", "cv02", "ss01", "ss03";
+    letter-spacing: -0.01em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: rgb(var(--accent));
+    font-family: var(--font-archivo);
+    letter-spacing: -0.02em;
   }
 
   ::selection {
-    background: rgb(var(--accent) / 0.25);
-    color: rgb(var(--text-primary));
+    background: rgb(var(--accent) / 0.12);
+    color: rgb(var(--accent));
   }
 
   :focus-visible {
-    outline: 2px solid rgb(var(--accent));
-    outline-offset: 2px;
+    outline: 1.5px solid rgb(var(--accent));
+    outline-offset: 3px;
     border-radius: 2px;
   }
 }
 
 @layer components {
   .container-content {
-    @apply mx-auto w-full max-w-content px-6 md:px-10;
+    @apply mx-auto w-full max-w-[1280px] px-6 md:px-8;
   }
 
   .eyebrow {
-    @apply font-mono text-[0.75rem] font-medium uppercase tracking-eyebrow text-faint;
+    @apply font-mono text-[0.7rem] font-medium uppercase tracking-eyebrow text-faint;
   }
 
   .tech-label {
-    @apply text-[0.8125rem] tabular-nums text-soft;
+    @apply font-mono text-[0.75rem] uppercase tracking-wider text-soft;
   }
 
   .hairline {
     @apply h-px w-full border-0 bg-line;
+  }
+
+  .hairline-v {
+    @apply w-px h-full border-0 bg-line;
+  }
+
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgb(var(--border) / 0.18) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--border) / 0.18) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-grid-fine {
+    background-image: 
+      linear-gradient(to right, rgb(var(--border) / 0.15) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--border) / 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .card-architectural {
+    @apply rounded-sm border border-line bg-surface p-6 md:p-8 transition-colors duration-200;
   }
 }
 

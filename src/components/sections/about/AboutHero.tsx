@@ -21,30 +21,31 @@ export function AboutHero() {
         className="container-content max-w-4xl"
       >
         <motion.p variants={fadeUp} className="eyebrow">
-          About AVIKRAT
+          01 · ABOUT AVIKRAT ARCHITECTURE
         </motion.p>
         <motion.h1
           id="about-hero-title"
           variants={fadeUp}
-          className="mt-6 text-[clamp(2.5rem,5.5vw,4.25rem)] font-semibold leading-[1.04] tracking-tight text-ink"
+          className="mt-6 text-[clamp(2.5rem,5.5vw,4.25rem)] font-bold leading-[1.04] tracking-tight text-charcoal uppercase"
+          style={{ fontFamily: "var(--font-archivo)" }}
         >
           Building a different way to{' '}
-          <span className="text-cyan">carry context.</span>
+          <span className="text-soft font-normal">carry context.</span>
         </motion.h1>
         <motion.p
           variants={fadeUp}
-          className="mt-6 max-w-2xl text-lg leading-relaxed text-soft"
+          className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-soft font-normal"
         >
-          AVIKRAT is exploring compact persistent state as a new architectural
-          approach to long-context LLM inference.
+          AVIKRAT is exploring compact persistent state as a foundational architectural
+          approach to constant-memory long-context LLM inference.
         </motion.p>
-        <motion.ul variants={fadeUp} className="mt-8 space-y-2">
+        <motion.ul variants={fadeUp} className="mt-8 space-y-2.5">
           {PRINCIPLES.map((p, i) => (
-            <li key={p} className="flex items-baseline gap-4 font-mono text-xs uppercase tracking-[0.18em] text-faint">
-              <span aria-hidden="true" className="text-cyan">
-                {String(i + 1).padStart(2, "0")}
+            <li key={p} className="flex items-baseline gap-4 font-mono text-xs uppercase tracking-widest text-faint">
+              <span aria-hidden="true" className="text-charcoal font-semibold">
+                [{String(i + 1).padStart(2, "0")}]
               </span>
-              <span className="text-soft">{p}</span>
+              <span className="text-soft font-medium">{p}</span>
             </li>
           ))}
         </motion.ul>

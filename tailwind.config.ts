@@ -12,8 +12,11 @@ const config: Config = {
         ink: "rgb(var(--text-primary) / <alpha-value>)",
         soft: "rgb(var(--text-secondary) / <alpha-value>)",
         faint: "rgb(var(--text-muted) / <alpha-value>)",
-        cyan: "rgb(var(--accent) / <alpha-value>)",
-        cyanBright: "rgb(var(--accent-soft) / <alpha-value>)",
+        charcoal: "rgb(var(--accent) / <alpha-value>)",
+        accent: "rgb(var(--accent) / <alpha-value>)",
+        accentSoft: "rgb(var(--accent-soft) / <alpha-value>)",
+        cyan: "rgb(var(--text-primary) / <alpha-value>)",
+        cyanBright: "rgb(var(--text-secondary) / <alpha-value>)",
         electric: "rgb(var(--accent-2) / <alpha-value>)",
       },
       fontFamily: {
@@ -26,15 +29,18 @@ const config: Config = {
         ],
       },
       letterSpacing: {
-        eyebrow: "0.18em",
+        eyebrow: "0.22em",
+        architectural: "0.25em",
+        nav: "0.14em",
       },
       maxWidth: {
-        content: "72rem",
-        wide: "78rem",
+        content: "75rem", // 1200px
+        hero: "77.5rem", // 1240px max-width container
+        wide: "80rem",  // 1280px
       },
       container: {
         center: true,
-        padding: { DEFAULT: "1.5rem", md: "2.5rem" },
+        padding: { DEFAULT: "1.5rem", md: "2rem" },
       },
     },
   },

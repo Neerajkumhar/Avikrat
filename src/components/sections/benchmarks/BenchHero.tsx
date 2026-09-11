@@ -15,27 +15,26 @@ export function BenchHero() {
         animate="show"
         className="container-content max-w-4xl"
       >
-        <motion.div variants={fadeUp} className="flex items-center gap-3">
-          <span aria-hidden="true" className="h-px w-8 bg-cyan/70" />
-          <motion.p variants={fadeUp} className="eyebrow">
-            Benchmarks / Validation
-          </motion.p>
-        </motion.div>
+        <motion.p variants={fadeUp} className="eyebrow flex items-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-charcoal" />
+          BENCHMARKS & SYSTEM VALIDATION
+        </motion.p>
         <motion.h1
           id="bench-hero-title"
           variants={fadeUp}
-          className="mt-6 text-[clamp(2.5rem,5.5vw,4.25rem)] font-semibold leading-[1.04] tracking-tight text-ink"
+          className="mt-6 text-[clamp(2.5rem,5.5vw,4.25rem)] font-bold leading-[1.04] tracking-tight text-charcoal uppercase"
+          style={{ fontFamily: "var(--font-archivo)" }}
         >
           Performance claims need{' '}
-          <span className="text-cyan">a baseline.</span>
+          <span className="text-soft font-normal">a baseline.</span>
         </motion.h1>
         <motion.p
           variants={fadeUp}
-          className="mt-6 max-w-2xl text-lg leading-relaxed text-soft"
+          className="mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-soft font-normal"
         >
-          The Hidden State Simulator is being developed toward measurable long-context
-          inference improvements. The next step is rigorous comparison against matched
-          conventional decoding baselines.
+          The Hidden State Simulator is engineered toward empirical long-context
+          inference improvements. The core target is rigorous measurement against matched
+          conventional transformer decoding baselines.
         </motion.p>
       </motion.div>
 
@@ -54,18 +53,18 @@ export function BenchHero() {
             parallax={16}
           />
         </motion.div>
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-line pt-5">
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-line pt-6 font-mono text-xs">
           <div className="flex items-center gap-2">
             <StatusPill kind="observed" />
-            <span className="text-xs text-faint">Currently available</span>
+            <span className="text-faint uppercase">Currently available</span>
           </div>
           <div className="flex items-center gap-2">
             <StatusPill kind="validating" />
-            <span className="text-xs text-faint">Requires measurement</span>
+            <span className="text-faint uppercase">Requires measurement</span>
           </div>
           <div className="flex items-center gap-2">
             <StatusPill kind="target" />
-            <span className="text-xs text-faint">Hypothesis</span>
+            <span className="text-faint uppercase">Architectural Hypothesis</span>
           </div>
         </div>
       </motion.div>

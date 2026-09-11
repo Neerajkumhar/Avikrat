@@ -3,9 +3,11 @@ import type { ReactNode } from "react";
 
 const styles = {
   primary:
-    "bg-ink text-base hover:bg-accent focus-visible:bg-accent",
+    "bg-charcoal text-base hover:bg-black border border-charcoal uppercase tracking-[0.14em] text-[0.8125rem]",
   ghost:
-    "border border-line text-ink hover:border-ink hover:text-ink",
+    "border border-line bg-transparent text-charcoal hover:border-charcoal hover:bg-surface2 uppercase tracking-[0.14em] text-[0.8125rem]",
+  outline:
+    "border border-line bg-surface text-ink hover:border-charcoal hover:text-charcoal uppercase tracking-[0.14em] text-[0.8125rem]",
 } as const;
 
 export function Button({
@@ -23,9 +25,17 @@ export function Button({
   className?: string;
   external?: boolean;
 }) {
-  const cls = `inline-flex items-center justify-center gap-2 rounded px-6 py-3 text-sm font-medium transition-colors duration-200 ${styles[variant]} ${className}`;
+  const cls = `inline-flex h-11 md:h-[44px] items-center justify-center gap-2.5 rounded-sm px-6 font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-charcoal ${styles[variant]} ${className}`;
   if (external) {
-    return <a className={cls} href={href}>{children}</a>;
+    return (
+      <a className={cls} href={href} target="_blank" rel="noopener noreferrer" style={{ fontFamily: "var(--font-archivo), sans-serif" }}>
+        {children}
+      </a>
+    );
   }
-  return <Link className={cls} href={href} onClick={onClick}>{children}</Link>;
+  return (
+    <Link className={cls} href={href} onClick={onClick} style={{ fontFamily: "var(--font-archivo), sans-serif" }}>
+      {children}
+    </Link>
+  );
 }

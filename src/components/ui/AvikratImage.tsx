@@ -66,13 +66,9 @@ export function AvikratImage({
     <div
       role="img"
       aria-label={def.alt}
-      className="flex h-full w-full items-center justify-center p-8 text-center"
-      style={{
-        background:
-          "radial-gradient(ellipse at 30% 20%, rgba(34,211,197,0.10), transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(59,130,246,0.08), transparent 55%)",
-      }}
+      className="flex h-full w-full flex-col items-center justify-center p-8 text-center bg-surface bg-grid-pattern border border-line"
     >
-      <span className="max-w-xs text-sm text-faint">{def.alt}</span>
+      <span className="max-w-xs text-xs font-mono tracking-widest text-faint uppercase">{def.alt}</span>
     </div>
   );
 

@@ -9,9 +9,9 @@ export function Card({
 }) {
   return (
     <div
-      className={`rounded border border-line bg-surface ${
+      className={`rounded-sm border border-line bg-surface p-6 md:p-8 ${
         interactive
-          ? "transition-colors duration-200 hover:border-ink"
+          ? "transition-all duration-200 hover:border-charcoal hover:bg-surface2"
           : ""
       } ${className}`}
     >

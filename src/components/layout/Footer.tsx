@@ -5,20 +5,26 @@ import { site, nav } from "@/lib/site";
 export function Footer() {
   return (
     <footer className="border-t border-line bg-surface">
-      <div className="container-content py-14 md:py-20">
-        <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div className="container-content py-16 md:py-24">
+        <div className="grid gap-12 md:grid-cols-[1.6fr_1fr_1fr]">
           <div>
-            <Logo />
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-soft">
+            <Logo size="md" />
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-soft font-normal">
               {site.tagline}
             </p>
+            <div className="mt-6 font-mono text-[0.7rem] uppercase tracking-widest text-faint">
+              COMPUTATIONAL ARCHITECTURE · RESEARCH LAB
+            </div>
           </div>
           <nav aria-label="Footer">
             <p className="eyebrow">Navigation</p>
-            <ul className="mt-4 space-y-2.5">
+            <ul className="mt-5 space-y-3">
               {nav.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-sm text-soft hover:text-ink">
+                  <Link
+                    href={item.href}
+                    className="text-xs uppercase tracking-nav text-soft hover:text-charcoal transition-colors"
+                  >
                     {item.label}
                   </Link>
                 </li>
@@ -26,24 +32,24 @@ export function Footer() {
             </ul>
           </nav>
           <div>
-            <p className="eyebrow">Contact</p>
-            <ul className="mt-4 space-y-2.5 text-sm text-soft">
+            <p className="eyebrow">Contact & Research</p>
+            <ul className="mt-5 space-y-3 font-mono text-xs text-soft">
               <li>
-                <a href={`mailto:${site.email}`} className="hover:text-ink">
+                <a href={`mailto:${site.email}`} className="hover:text-charcoal transition-colors">
                   {site.email}
                 </a>
               </li>
               <li>
-                <a href={site.phoneHref} className="hover:text-ink">
+                <a href={site.phoneHref} className="hover:text-charcoal transition-colors">
                   {site.phone}
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-14 flex flex-col gap-2 border-t border-line pt-6 text-[0.75rem] text-faint sm:flex-row sm:items-center sm:justify-between">
-          <p>© MMXXVI AVIKRAT.</p>
-          <p>Statistical claims are targets, not measured production benchmarks.</p>
+        <div className="mt-16 flex flex-col gap-3 border-t border-line pt-8 font-mono text-[0.75rem] text-faint sm:flex-row sm:items-center sm:justify-between">
+          <p>© MMXXVI AVIKRAT. ALL RIGHTS RESERVED.</p>
+          <p className="uppercase">CONST-MEMORY INFERENCE ARCHITECTURE</p>
         </div>
       </div>
     </footer>

@@ -12,20 +12,22 @@ export function ResearchCtaSection() {
         initial="hidden"
         whileInView="show"
         viewport={viewport}
-        className="mx-auto flex max-w-2xl flex-col items-center gap-5 text-center"
+        className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center rounded-sm border border-line bg-surface p-10 md:p-14"
       >
+        <p className="eyebrow">RESEARCH FRAMEWORK INTEGRATION</p>
         <h2
           id="research-cta-title"
-          className="text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.08] tracking-tight text-ink"
+          className="text-[clamp(2.25rem,4.5vw,3.25rem)] font-bold leading-[1.08] tracking-tight text-charcoal uppercase"
+          style={{ fontFamily: "var(--font-archivo)" }}
         >
           These capabilities feed the{' '}
-          <span className="text-cyan">validation framework.</span>
+          <span className="text-soft font-normal">validation framework.</span>
         </h2>
-        <p className="text-base leading-relaxed text-soft">
-          The next step is rigorous comparison against matched conventional decoding
-          baselines across perplexity, latency, GPU memory and context-length scaling.
+        <p className="text-base leading-relaxed text-soft font-normal">
+          The next phase executes rigorous empirical comparisons against matched conventional decoding
+          baselines across perplexity, latency, GPU memory footprint and sequence scaling.
         </p>
-        <Button href="/benchmarks">Explore the Benchmarks</Button>
+        <Button href="/benchmarks">Explore Benchmarks</Button>
       </motion.div>
     </section>
   );
