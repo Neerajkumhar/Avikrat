@@ -9,8 +9,8 @@ export const STATUS_TEXT: Record<StatusKind, string> = {
 };
 
 const STATUS_CLASS: Record<StatusKind, string> = {
-  observed: "border-cyan/50 bg-cyan/10 text-cyan",
-  validating: "border-electric/50 bg-electric/10 text-electric",
+  observed: "border-ink/40 bg-ink/10 text-ink",
+  validating: "border-accent-2/40 bg-accent-2/10 text-accent-2",
   target: "border-line bg-surface2/60 text-faint",
 };
 
@@ -25,16 +25,16 @@ export function StatusPill({
 }) {
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] ${STATUS_CLASS[kind]} ${className}`}
+      className={`inline-flex items-center gap-1.5 rounded border px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.14em] ${STATUS_CLASS[kind]} ${className}`}
     >
       <span
         aria-hidden="true"
         className={
           kind === "observed"
-            ? "h-1.5 w-1.5 rounded-full bg-cyan"
+            ? "h-1.5 w-1.5 rounded bg-ink"
             : kind === "validating"
-              ? "h-1.5 w-1.5 rounded-full bg-electric"
-              : "h-1.5 w-1.5 rounded-full bg-faint"
+              ? "h-1.5 w-1.5 rounded bg-accent-2"
+              : "h-1.5 w-1.5 rounded bg-faint"
         }
       />
       {text ?? STATUS_TEXT[kind]}

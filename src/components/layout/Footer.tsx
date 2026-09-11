@@ -4,7 +4,7 @@ import { site, nav } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-surface/40">
+    <footer className="border-t border-line bg-surface">
       <div className="container-content py-14 md:py-20">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
@@ -29,12 +29,12 @@ export function Footer() {
             <p className="eyebrow">Contact</p>
             <ul className="mt-4 space-y-2.5 text-sm text-soft">
               <li>
-                <a href={`mailto:${site.email}`} className="hover:text-cyan">
+                <a href={`mailto:${site.email}`} className="hover:text-ink">
                   {site.email}
                 </a>
               </li>
               <li>
-                <a href={site.phoneHref} className="hover:text-cyan">
+                <a href={site.phoneHref} className="hover:text-ink">
                   {site.phone}
                 </a>
               </li>

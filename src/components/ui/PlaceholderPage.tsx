@@ -18,7 +18,7 @@ export function PlaceholderPage({ title }: { title: string }) {
         </p>
         <Link
           href="/"
-          className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-cyan hover:text-cyanBright"
+          className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-ink hover:text-soft"
         >
           Back to home
         </Link>
