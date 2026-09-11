@@ -1,7 +1,8 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ProblemDiagram } from "@/components/visualizations/ProblemDiagram";
+import { AvikratImage } from "@/components/ui/AvikratImage";
+import { PROBLEM_IMAGES } from "@/lib/images";
 
 export function ProblemSection() {
   return (
@@ -24,9 +25,13 @@ export function ProblemSection() {
             Illustrative relationship — not measured benchmark data.
           </p>
         </div>
-        <div className="rounded-2xl border border-line bg-surface p-6 md:p-10">
-          <ProblemDiagram />
-        </div>
+        <AvikratImage
+          def={PROBLEM_IMAGES.hero}
+          mode="aspect"
+          aspectRatio="4 / 3"
+          sizes="(max-width: 768px) 100vw, 50vw"
+          parallax={16}
+        />
       </div>
     </section>
   );

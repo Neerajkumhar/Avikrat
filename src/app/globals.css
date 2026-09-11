@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --bg-base: #06080f;
-  --bg-surface: #0b0f1a;
-  --bg-surface-2: #101524;
-  --border: #1c2233;
-  --text-primary: #e8eaf0;
-  --text-secondary: #9ba3b5;
-  --text-muted: #5c6474;
-  --accent-cyan: #22d3c5;
-  --accent-cyan-bright: #2de3d4;
-  --accent-blue: #3b82f6;
+  --bg-base: 6 8 15;
+  --bg-surface: 11 15 26;
+  --bg-surface-2: 16 21 36;
+  --border: 28 34 51;
+  --text-primary: 232 234 240;
+  --text-secondary: 155 163 181;
+  --text-muted: 130 140 160;
+  --accent-cyan: 34 211 197;
+  --accent-cyan-bright: 45 227 212;
+  --accent-blue: 59 130 246;
 }
 
 @layer base {
@@ -23,18 +23,18 @@
   }
 
   body {
-    background-color: var(--bg-base);
-    color: var(--text-primary);
+    background-color: rgb(var(--bg-base));
+    color: rgb(var(--text-primary));
     font-feature-settings: "cv11", "cv02";
   }
 
   ::selection {
     background: rgba(34, 211, 197, 0.25);
-    color: var(--text-primary);
+    color: rgb(var(--text-primary));
   }
 
   :focus-visible {
-    outline: 2px solid var(--accent-cyan);
+    outline: 2px solid rgb(var(--accent-cyan));
     outline-offset: 2px;
     border-radius: 2px;
   }
@@ -56,10 +56,15 @@
   .hairline {
     @apply h-px w-full border-0 bg-line;
   }
+}
 
-  .sr-description {
-    @apply absolute -m-px h-px w-px overflow-hidden border-0 p-0 whitespace-nowrap;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

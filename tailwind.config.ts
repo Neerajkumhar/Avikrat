@@ -5,16 +5,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        base: "var(--bg-base)",
-        surface: "var(--bg-surface)",
-        surface2: "var(--bg-surface-2)",
-        line: "var(--border)",
-        ink: "var(--text-primary)",
-        soft: "var(--text-secondary)",
-        faint: "var(--text-muted)",
-        cyan: "var(--accent-cyan)",
-        cyanBright: "var(--accent-cyan-bright)",
-        electric: "var(--accent-blue)",
+        base: "rgb(var(--bg-base) / <alpha-value>)",
+        surface: "rgb(var(--bg-surface) / <alpha-value>)",
+        surface2: "rgb(var(--bg-surface-2) / <alpha-value>)",
+        line: "rgb(var(--border) / <alpha-value>)",
+        ink: "rgb(var(--text-primary) / <alpha-value>)",
+        soft: "rgb(var(--text-secondary) / <alpha-value>)",
+        faint: "rgb(var(--text-muted) / <alpha-value>)",
+        cyan: "rgb(var(--accent-cyan) / <alpha-value>)",
+        cyanBright: "rgb(var(--accent-cyan-bright) / <alpha-value>)",
+        electric: "rgb(var(--accent-blue) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],

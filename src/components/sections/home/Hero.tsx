@@ -1,19 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUp, stagger, viewport } from "@/lib/animations";
+import { fadeUp, stagger } from "@/lib/animations";
 import { Button } from "@/components/ui/Button";
-import { HeroDiagram } from "@/components/visualizations/HeroDiagram";
+import { AvikratImage } from "@/components/ui/AvikratImage";
+import { HOME_IMAGES } from "@/lib/images";
 
 export function Hero() {
   return (
-    <section
-      aria-labelledby="hero-title"
-      className="relative overflow-hidden pt-36 pb-20 md:pt-44 md:pb-28"
-    >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_center,rgba(34,211,197,0.07),transparent_55%)]" />
-      <div className="container-content relative grid items-center gap-16 lg:grid-cols-[1.05fr_0.95fr]">
-        <motion.div variants={stagger} initial="hidden" animate="show">
+    <section aria-labelledby="hero-title" className="relative overflow-hidden">
+      <div className="absolute inset-0">
+        <AvikratImage def={HOME_IMAGES.hero} mode="fill" parallax={24} />
+      </div>
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#06080F] via-[#06080F]/65 to-[#06080F]/30"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_72%_18%,transparent_35%,rgba(6,8,15,0.7)_90%)]"
+      />
+
+      <div className="container-content relative flex min-h-[92svh] flex-col justify-end pt-40 pb-16 md:pb-24">
+        <motion.div variants={stagger} initial="hidden" animate="show" className="max-w-3xl">
           <motion.p variants={fadeUp} className="eyebrow">
             AI INFRASTRUCTURE · LONG-CONTEXT INFERENCE
           </motion.p>
@@ -24,7 +34,7 @@ export function Hero() {
           >
             Long context.
             <br />
-            <span className="text-cyan">Without the growing cost.</span>
+            <span className="text-cyan brightness-110">Without the growing cost.</span>
           </motion.h1>
           <motion.p variants={fadeUp} className="mt-6 max-w-xl text-lg leading-relaxed text-soft">
             AVIKRAT is building a new approach to long-context LLM inference using compact
@@ -34,15 +44,6 @@ export function Hero() {
             <Button href="/technology">Explore the Technology</Button>
             <Button href="/contact" variant="ghost">Work With Us</Button>
           </motion.div>
-        </motion.div>
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-          viewport={viewport}
-          className="max-w-[560px] justify-self-center lg:justify-self-end"
-        >
-          <HeroDiagram />
         </motion.div>
       </div>
     </section>

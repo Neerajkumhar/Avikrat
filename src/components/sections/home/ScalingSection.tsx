@@ -1,14 +1,20 @@
 "use client";
 
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { ScalingGraph } from "@/components/visualizations/ScalingGraph";
+import { AvikratImage } from "@/components/ui/AvikratImage";
+import { HOME_IMAGES } from "@/lib/images";
 
 export function ScalingSection() {
   return (
     <section aria-labelledby="scaling-title" className="container-content py-24 md:py-32 scroll-mt-20">
       <div className="grid items-center gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
         <div className="order-2 lg:order-1">
-          <ScalingGraph />
+          <AvikratImage
+            def={HOME_IMAGES.scaling}
+            mode="aspect"
+            aspectRatio="3 / 4"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
         <div className="order-1 lg:order-2">
           <SectionHeader

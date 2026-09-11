@@ -3,50 +3,34 @@
 import { motion } from "framer-motion";
 import { fadeUp, stagger, viewport } from "@/lib/animations";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { AvikratImage } from "@/components/ui/AvikratImage";
+import { APPS_IMAGES } from "@/lib/images";
 import { Button } from "@/components/ui/Button";
 
 const APPS = [
   {
     title: "Enterprise Copilots",
-    copy: "Persistent conversations and large document sessions.",
-    glyph: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M4 5h20v13H10l-6 5V5z" stroke="#22d3c5" strokeWidth="1.5" strokeLinejoin="round" />
-        <path d="M9 10h10M9 13h6" stroke="rgba(34,211,197,0.6)" strokeWidth="1.3" strokeLinecap="round" />
-      </svg>
-    ),
+    copy: "Persistent conversations and large documents without re-reading the full history every step.",
+    image: APPS_IMAGES.enterprise,
+    alt: APPS_IMAGES.enterprise.alt,
   },
   {
     title: "Edge AI",
-    copy: "Smaller persistent memory for constrained devices.",
-    glyph: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <rect x="6" y="6" width="16" height="16" rx="2" stroke="#22d3c5" strokeWidth="1.5" />
-        <rect x="11" y="11" width="6" height="6" rx="1" fill="rgba(34,211,197,0.5)" />
-        <path d="M14 2v4M14 22v4M2 14h4M22 14h4" stroke="rgba(34,211,197,0.5)" strokeWidth="1.2" strokeLinecap="round" />
-      </svg>
-    ),
+    copy: "Continuous context on constrained devices, with less persistent baggage to carry.",
+    image: APPS_IMAGES.edge,
+    alt: APPS_IMAGES.edge.alt,
   },
   {
     title: "Agent Infrastructure",
-    copy: "Long-running workflows without exploding state cost.",
-    glyph: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="9" cy="8" r="3" stroke="#22d3c5" strokeWidth="1.5" />
-        <circle cx="19" cy="8" r="3" stroke="#22d3c5" strokeWidth="1.5" />
-        <circle cx="14" cy="21" r="3.2" fill="rgba(34,211,197,0.18)" stroke="#22d3c5" strokeWidth="1.5" />
-        <path d="M11 10.4 12.6 18M17 10.4 15.4 18" stroke="rgba(34,211,197,0.55)" strokeWidth="1.2" />
-      </svg>
-    ),
+    copy: "Long-running workflows keep a short active window alongside a compact persistent state.",
+    image: APPS_IMAGES.agent,
+    alt: APPS_IMAGES.agent.alt,
   },
   {
     title: "Real-Time Systems",
-    copy: "Continuous context becomes practical when memory stays bounded.",
-    glyph: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M3 14h4l3-8 4 14 3-9 2.5 3H25" stroke="#22d3c5" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
+    copy: "Bounded memory keeps continuous context practical without continuously growing state.",
+    image: APPS_IMAGES.realtime,
+    alt: APPS_IMAGES.realtime.alt,
   },
 ];
 
@@ -64,32 +48,35 @@ export function ApplicationsSection() {
         </Button>
       </div>
 
-      <motion.ul
+      <motion.div
         variants={stagger}
         initial="hidden"
         whileInView="show"
         viewport={viewport}
-        className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4"
+        className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
       >
         {APPS.map((app) => (
-          <motion.li
+          <motion.article
             key={app.title}
             variants={fadeUp}
-            className="group relative overflow-hidden rounded-2xl border border-line bg-surface p-6 transition-colors duration-300 hover:border-cyan/50"
+            className="group relative overflow-hidden rounded-2xl border border-line bg-surface transition-colors duration-300 hover:border-cyan/50"
           >
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-              style={{ background: "radial-gradient(ellipse at 20% 0%, rgba(34,211,197,0.08), transparent 60%)" }}
+            <AvikratImage
+              def={app.image}
+              mode="aspect"
+              aspectRatio="4 / 3"
+              sizes="(max-width: 768px) 100vw, 25vw"
+              imgClassName="transition-transform duration-700 group-hover:scale-[1.04]"
             />
-            <span className="text-cyan">{app.glyph}</span>
-            <h3 className="mt-5 text-base font-semibold text-ink transition-colors duration-300 group-hover:text-cyan">
-              {app.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-soft">{app.copy}</p>
-          </motion.li>
+            <div className="relative p-6 md:p-5">
+              <h3 className="text-base font-semibold text-ink transition-colors duration-300 group-hover:text-cyan">
+                {app.title}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-soft">{app.copy}</p>
+            </div>
+          </motion.article>
         ))}
-      </motion.ul>
+      </motion.div>
     </section>
   );
 }
